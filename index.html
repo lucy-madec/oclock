@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O' Clock</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>O' Clock</h1>
@@ -30,8 +32,34 @@
                 <span id="timer-time">00:00</span>
             </div>
         </div>
+
+        <!-- Stopwatch -->
+        <div class="section" id="chronometre">
+            <h2>Chronomètre</h2>
+            <div class="chrono-display">
+                <span id="chrono-time">00:00:00</span>
+            </div>
+            <div class="chrono-controls">
+                <button id="start-chrono">Démarrer/Arrêter</button>
+                <button id="lap-chrono">Tour</button>
+                <button id="reset-chrono">Réinitialiser</button>
+            </div>
+            <ul id="chrono-laps"></ul>
+        </div>
+
+        <!-- Alarm clock -->
+        <div class="section" id="reveil">
+            <h2>Réveil</h2>
+            <div class="alarm-controls">
+                <input type="time" id="alarm-time" placeholder="HH:MM">
+                <input type="text" id="alarm-message" placeholder="Message">
+                <button id="add-alarm">Ajouter une alarme</button>
+            </div>
+            <ul id="alarm-list"></ul>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
