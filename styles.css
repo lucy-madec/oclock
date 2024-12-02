@@ -52,3 +52,28 @@ input {
     border-radius: 5px;
     text-align: center;
 }
+
+.chrono-display, .alarm-controls {
+    margin: 20px 0;
+}
+
+.chrono-controls, .alarm-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+ul li {
+    background-color: #1a1a1a;
+    color: #ff0000;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: left;
+}
