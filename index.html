@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O' Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>O' Clock</h1>
+
+        <!-- Watch -->
+        <div class="section" id="horloge">
+            <h2>Horloge</h2>
+            <div class="clock-display">
+                <span id="current-time">00:00:00</span>
+            </div>
+        </div>
+
+        <!-- Timer -->
+        <div class="section" id="minuteur">
+            <h2>Minuteur</h2>
+            <div class="timer-controls">
+                <input type="number" id="timer-input" placeholder="Temps en secondes">
+                <button id="start-timer">Démarrer</button>
+                <button id="reset-timer">Réinitialiser</button>
+            </div>
+            <div class="timer-display">
+                <span id="timer-time">00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
