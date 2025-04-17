@@ -26,9 +26,32 @@ function loadFromLocalStorage() {
     }
 }
 
-// Réinitialiser quand l'onglet est fermé
+// Utiliser sessionStorage pour détecter la fermeture du navigateur vs le rechargement
+// Quand la page est chargée, on stocke un marqueur dans sessionStorage
+window.addEventListener('load', function() {
+    sessionStorage.setItem('oclockSessionActive', 'true');
+});
+
+// Quand l'utilisateur quitte la page (rechargement ou fermeture)
 window.addEventListener('beforeunload', function() {
-    localStorage.removeItem('oclockData');
+    // On stocke l'état actuel dans localStorage pour le rechargement
+    localStorage.setItem('oclockData', JSON.stringify(appData));
+    // On marque que la page va être déchargée
+    sessionStorage.setItem('oclockPageUnloading', 'true');
+});
+
+// Au chargement de la page, on vérifie si c'est un rechargement ou une nouvelle session
+document.addEventListener('DOMContentLoaded', function() {
+    const wasPageUnloading = sessionStorage.getItem('oclockPageUnloading');
+    const wasSessionActive = sessionStorage.getItem('oclockSessionActive');
+    
+    // Nettoyer les marqueurs
+    sessionStorage.removeItem('oclockPageUnloading');
+    
+    // Si la session n'était pas active avant (nouvel onglet/fenêtre), on réinitialise
+    if (!wasSessionActive) {
+        localStorage.removeItem('oclockData');
+    }
 });
 
 // Charger les données au démarrage
