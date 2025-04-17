@@ -1,28 +1,64 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #121212;
-    color: #ff0000;
+    color: #ffffff;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     text-align: center;
 }
 
 h1, h2 {
     margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
 }
 
 .section {
     margin-bottom: 40px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.clock-display, .timer-display {
-    font-size: 2rem;
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.clock-display, .timer-display, .chrono-display {
+    font-size: 2.5rem;
     margin: 20px 0;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .timer-controls {
@@ -33,21 +69,27 @@ h1, h2 {
 
 button {
     background-color: #282828;
-    color: #ff0000;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
     background-color: #383838;
+    transform: scale(1.05);
 }
 
 input {
     background-color: #1a1a1a;
-    color: #ff0000;
-    border: 1px solid #ff0000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -71,9 +113,12 @@ ul {
 
 ul li {
     background-color: #1a1a1a;
-    color: #ff0000;
+    color: #ffffff;
     padding: 10px;
-    margin: 5px 0;
+    margin: 8px 0;
     border-radius: 5px;
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
