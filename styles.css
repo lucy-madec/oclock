@@ -121,4 +121,20 @@ ul li {
     display: flex;
     align-items: center;
     gap: 10px;
+    justify-content: space-between;
+}
+
+ul li .delete-alarm {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+ul li .delete-alarm:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
 }
